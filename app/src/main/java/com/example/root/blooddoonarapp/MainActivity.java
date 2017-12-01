@@ -1,7 +1,6 @@
 package com.example.root.blooddoonarapp;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -40,11 +39,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         init();
         EnableRuntimePermission();
-        sqlLiteHelper = new SqlLiteHelper(this, "DONARDB.sqlite",
+        sqlLiteHelper = new SqlLiteHelper(this, "DONORDB.sqlite",
                 null, 1);
 
         btnChose.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("NewApi")
+
             @Override
             public void onClick(View view) {
                 profilePicture = findViewById(R.id.imageView);
@@ -102,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         btnShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,DonarListActivity.class);
+                Intent intent = new Intent(MainActivity.this,DonorListActivity.class);
                 startActivity(intent);
 
             }
@@ -126,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private byte[] imageViewToByte(ImageView profilePicture) {
+    public static byte[] imageViewToByte(ImageView profilePicture) {
         Bitmap bitmap = ((BitmapDrawable)profilePicture.getDrawable()).getBitmap();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG,100,stream);

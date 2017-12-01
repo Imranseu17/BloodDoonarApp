@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by root on 11/5/17.
  */
 
-public class BloodDonar extends ArrayList<BloodDonar> {
+public class BloodDonor extends ArrayList<BloodDonor> {
     private int id;
     private  String name;
     private  String group;
@@ -15,7 +15,7 @@ public class BloodDonar extends ArrayList<BloodDonar> {
 
 
 
-    public BloodDonar(int id, String name, String group, String number, byte[] image) {
+    public BloodDonor(int id, String name, String group, String number, byte[] image) {
         this.id = id;
         this.name = name;
         this.group = group;
@@ -23,7 +23,7 @@ public class BloodDonar extends ArrayList<BloodDonar> {
         this.image = image;
     }
 
-    public BloodDonar() {
+    public BloodDonor() {
 
     }
 

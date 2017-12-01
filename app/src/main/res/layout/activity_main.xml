@@ -16,7 +16,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:layout_marginTop="10dp"
-        android:hint="Donar Name"
+        android:hint="Donor Name"
         tools:layout_editor_absoluteX="31dp"
         tools:layout_editor_absoluteY="16dp"
         tools:ignore="MissingConstraints" />
@@ -29,7 +29,7 @@
         android:layout_below="@+id/pName"
         android:layout_marginTop="39dp"
         android:ems="10"
-        android:hint="Donar Blood Group"
+        android:hint="Donor Blood Group"
         android:inputType="textPersonName"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="31dp"
@@ -43,7 +43,7 @@
         android:layout_below="@+id/pgroup"
         android:layout_marginTop="39dp"
         android:ems="10"
-        android:hint="Donar Number"
+        android:hint="Donor Number"
         android:inputType="number"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="31dp"
@@ -77,7 +77,7 @@
         android:layout_alignBottom="@+id/imageView"
         android:layout_alignEnd="@+id/btpick_contact"
         android:layout_marginEnd="26dp"
-        android:text="Chose Image"
+        android:text="Choose Image"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="199dp"
         tools:layout_editor_absoluteY="215dp" />
@@ -90,7 +90,7 @@
         android:layout_below="@+id/chose"
         android:layout_marginEnd="15dp"
         android:layout_marginTop="30dp"
-        android:text="Add donar"
+        android:text="Add donor"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="169dp"
         tools:layout_editor_absoluteY="319dp" />
@@ -101,7 +101,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/add"
         android:layout_toStartOf="@+id/chose"
-        android:text="show Donar List"
+        android:text="show Donor List"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="61dp"
         tools:layout_editor_absoluteY="412dp" />
@@ -113,7 +113,7 @@
         android:layout_alignEnd="@+id/add"
         android:layout_below="@+id/add"
         android:layout_marginTop="14dp"
-        android:text=" call Donar "
+        android:text=" call Donor "
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="61dp"
         tools:layout_editor_absoluteY="412dp" />

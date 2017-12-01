@@ -7,13 +7,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
 
+import java.sql.Statement;
+
 /**
  * Created by root on 11/4/17.
  */
 
 public class SqlLiteHelper extends SQLiteOpenHelper {
-        SQLiteDatabase sqLiteDatabase;
-        long _id;
+
 
     public SqlLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -23,7 +24,7 @@ public class SqlLiteHelper extends SQLiteOpenHelper {
 
     public  void insertData(String name,String group,String number,byte[]image){
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
-        String sql = "INSERT INTO DONAR VALUES(Null,?,?,?,?)";
+        String sql = "INSERT INTO DONOR VALUES(Null,?,?,?,?)";
         SQLiteStatement statement = sqLiteDatabase.compileStatement(sql);
         statement.clearBindings();
         statement.bindString(1,name);
@@ -34,23 +35,33 @@ public class SqlLiteHelper extends SQLiteOpenHelper {
         statement.close();
     }
 
-    public int update( String name, String group, String number, byte[]image) {
-        ContentValues  contentValues = new ContentValues();
-        contentValues.put("name",name);
-        contentValues.put("bloodgroup",group);
-        contentValues.put("number",number);
-        contentValues.put("image",image);
-        int updatedata = sqLiteDatabase.
-                update("DONAR", contentValues, "-id = " + _id, null);
-        return updatedata;
+    public  void  updateData(String name,String group,String number,byte[]image,int id){
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        String sql = "UPDATE DONOR SET name = ?,bloodgroup = ?, number = ?,image = ? WHERE _id = ?";
+        SQLiteStatement statement = sqLiteDatabase.compileStatement(sql);
+        statement.bindString(1,name);
+        statement.bindString(2,group);
+        statement.bindString(3,number);
+        statement.bindBlob(4,image);
+        statement.bindDouble(5, (double) id);
+        statement.execute();
+        statement.close();
 
 
     }
 
-    public void delete(long _id) {
-        sqLiteDatabase.delete("DONAR",
-                "_id =" + _id, null);
+    public void  deleteData(int id){
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        String sql = "DELETE FROM DONOR WHERE _id = ?";
+        SQLiteStatement statement = sqLiteDatabase.compileStatement(sql);
+        statement.clearBindings();
+        statement.bindDouble(1, (double) id);
+        statement.execute();
+        sqLiteDatabase.close();
+
+
     }
+
 
 
     public Cursor getdata(String sql){
@@ -60,7 +71,7 @@ public class SqlLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String sql = "CREATE TABLE IF NOT EXISTS DONAR(_id INTEGER PRIMARY KEY " +
+        String sql = "CREATE TABLE IF NOT EXISTS DONOR(_id INTEGER PRIMARY KEY " +
                 "AUTOINCREMENT ,name VARCHAR,bloodgroup VARCHAR,number VARCHAR,image BLOG)";
         sqLiteDatabase.execSQL(sql);
 

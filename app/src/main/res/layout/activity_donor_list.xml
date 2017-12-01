@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.root.blooddoonarapp.DonarListActivity">
+    tools:context="com.example.root.blooddoonarapp.DonorListActivity">
 
     <GridView
         android:id="@+id/my_gridview"

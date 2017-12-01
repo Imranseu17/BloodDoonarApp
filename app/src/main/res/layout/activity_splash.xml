@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Smart Blood Donar App"
+        android:text=" Blood Donor App"
         android:textColor="@color/colorAccent"
         android:gravity="center"
         android:textSize="30sp"
